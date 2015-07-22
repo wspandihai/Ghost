@@ -7,7 +7,7 @@ var express,
 
 // Make sure dependencies are installed and file system permissions are correct.
 require('./core/server/utils/startup-check').check();
-
+debugger;
 // Proceed with startup
 express = require('express');
 ghost = require('./core');

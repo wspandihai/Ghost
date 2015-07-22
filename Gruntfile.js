@@ -323,6 +323,7 @@ var _              = require('lodash'),
                 // #### Run bower install
                 // Used as part of `grunt init`. See the section on [Building Assets](#building%20assets) for more
                 // information.
+                //bower命令,读取根目录下面的.bowerrc文件获取路径,然后根据路径安装包的依赖
                 bower: {
                     command: path.resolve(cwd + '/node_modules/.bin/bower --allow-root install'),
                     options: {
@@ -450,6 +451,7 @@ var _              = require('lodash'),
 
             // ### grunt-update-submodules
             // Grunt task to update git submodules
+            //git submodules：更新对应主项目的子项目
             update_submodules: {
                 default: {
                     options: {
@@ -903,7 +905,7 @@ var _              = require('lodash'),
         // `bower` does have some quirks, such as not running as root. If you have problems please try running
         // `grunt init --verbose` to see if there are any errors.
         grunt.registerTask('init', 'Prepare the project for development',
-            ['shell:ember:init', 'shell:bower', 'update_submodules', 'assets', 'default']);
+            [ 'shell:bower', 'update_submodules', 'assets', 'default']);
 
         // ### Basic Asset Building
         // Builds and moves necessary client assets. Prod additionally builds the ember app.
